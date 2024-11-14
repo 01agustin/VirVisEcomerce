@@ -9,5 +9,12 @@ namespace VirVisEcomerce.Context
 
         public DbSet<Usuario> Usuario { get; set; }
 
+        public DbSet<Producto> Producto { get; set; }
+
+
+        public DbSet<Resenia> Resenia { get; set; }
+
+
+
     }
 }

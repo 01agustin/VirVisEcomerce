@@ -7,11 +7,15 @@ public class Program
     public static void Main(string[] args)
     {
         var builder = WebApplication.CreateBuilder(args);
+
         builder.Services.AddDbContext<VirVisEcomerceContext>(
-        options => options.UseSqlServer(builder.Configuration["ConnectionStrings:VirVisDBConnection"]));
+            options => options.UseSqlServer(builder.Configuration["ConnectionStrings:VirVisDBConnection"]));
+        
         // Add services to the container.
         builder.Services.AddControllersWithViews();
+        
         var app = builder.Build();
+        
         // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
@@ -20,13 +24,19 @@ public class Program
             // this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
+        
         app.UseHttpsRedirection();
+        
         app.UseStaticFiles();
+        
         app.UseRouting();
+        
         app.UseAuthorization();
+        
         app.MapControllerRoute(
-        name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}");
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}/{id?}");
+        
         app.Run();
     }
 }

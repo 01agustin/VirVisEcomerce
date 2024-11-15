@@ -4,11 +4,11 @@ using VirVisEcomerce.Models;
 
 namespace VirVisEcomerce.Controllers
 {
-    public class Login : Controller
+    public class LoginController : Controller
     {
         private readonly VirVisEcomerceContext _context;
 
-        public Login(VirVisEcomerceContext context)
+        public LoginController(VirVisEcomerceContext context)
         {
             _context = context;
         }
@@ -40,7 +40,8 @@ namespace VirVisEcomerce.Controllers
 
         private bool AuthenticateUser(string email, string password)
         {
-            var usuario = _context.Usuario.SingleOrDefault(u => u.email == email && u.password == password);
+            var usuario = _context.Usuario.SingleOrDefault(
+                u => u.email == email && u.password == password);
 
             return usuario != null; 
         }

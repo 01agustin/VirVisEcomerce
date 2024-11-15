@@ -12,9 +12,7 @@ namespace VirVisEcomerce.Models
         public required string lastname { get; set; }
         public required string email { get; set; }
         public required string password { get; set; }
-
         public required string role { get; set; }
-
 
 
         public ICollection<Resenia> Resenias {  get; set; } = new List<Resenia>();

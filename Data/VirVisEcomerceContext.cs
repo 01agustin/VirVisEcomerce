@@ -11,7 +11,6 @@ namespace VirVisEcomerce.Context
 
         public DbSet<Producto> Producto { get; set; }
 
-
         public DbSet<Resenia> Resenia { get; set; }
 
 
